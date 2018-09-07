@@ -6,6 +6,7 @@ import About from './About';
 import Keglist from './Keglist';
 
 import Header from './Header';
+import NewKegForm from './NewKegForm';
 import Home from './Home';
 
 
@@ -17,6 +18,7 @@ function App(){
         <Route exact path='/' component={Home} />
         <Route path='/about' component={About} />
         <Route path='/keg' component={Keglist} />
+        <Route path='/beerform' component={NewKegForm} />
 
 
 
