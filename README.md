@@ -27,8 +27,9 @@ For any questions or support details, please email:
 
 ## Spec
 
-* Show list of characters  
-* Add additional information
+* Show list of beer kegs, For each keg, the patron see its name, brand, price and alcohol Content and kegs remaining.
+* Employee can add new beer keg.
+* Employee can modify kegs properties.
 * Add routing to different pages on site.  
 * Add images and styling for site.
 
