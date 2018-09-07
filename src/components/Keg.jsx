@@ -12,7 +12,7 @@ function Keg(props){
 
         <p><strong>ABV:</strong> {props.abv}</p>
         <p><strong>Price:</strong> {props.price}</p>
-        <p><strong>Kegs Remaining:</strong> {props.kegremaining}</p>
+        <p><strong>Pints Remaining:</strong> {props.kegremaining}</p>
 
       </div>
       <style jsx>
