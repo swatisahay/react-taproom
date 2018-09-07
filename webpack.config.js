@@ -8,7 +8,7 @@ module.exports = {
     'react-hot-loader/patch',
     'webpack-dev-server/client?http://localhost:8080',
     'webpack/hot/only-dev-server',
-    resolve(__dirname, "src", "index.jsx")
+    resolve(__dirname, "src") + "/index.jsx"
   ],
 
   output: {
@@ -18,7 +18,7 @@ module.exports = {
   },
 
   resolve: {
-    extensions: [ '.js', '.jsx' ]
+    extensions: ['.js', '.jsx']
   },
 
   devtool: '#source-map',
@@ -33,22 +33,12 @@ module.exports = {
     rules: [
       {
         test: /\.jsx?$/,
-        enforce: "pre",
-        loader: "eslint-loader",
-        exclude: /node_modules/,
-        options: {
-          emitWarning: true,
-          configFile: "./.eslintrc.json"
-          }
-        },
-        {
-        test: /\.jsx?$/,
         loader: "babel-loader",
         exclude: /node_modules/,
         options: {
           presets: [
             ["es2015", {"modules": false}],
-            "react",
+            "react"
           ],
           plugins: [
             "react-hot-loader/babel",
@@ -61,26 +51,41 @@ module.exports = {
         loader: "style-loader!css-loader"
       },
       {
-        test: /\.(png|gif|jp(e*)g|svg)$/,
-        use: {
-          loader: 'url-loader',
-          options: {
-            limit: 8000,
-            name: 'images/[hash]-[name].[ext]'
+            test: /\.(jpg|png|gif|svg|pdf)$/,
+            use: [
+                {
+                  // loader: 'file?name=src/img/favicon.ico'
+                    loader: 'file-loader',
+                    options: {
+                        name: '[path][name]-[hash:8].[ext]'
+                    },
+                },
+            ]
+        },
+        {
+              test: /\.(ico)$/,
+              use: [
+                  {
+                    // loader: 'file?name=src/img/favicon.ico'
+                      loader: 'file-loader',
+                      options: {
+                          name: 'file?name=[name].[ext]'
+                      },
+                  },
+              ]
           }
-        }
-      }
-    ]
+    ],
   },
 
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NamedModulesPlugin(),
     new HtmlWebpackPlugin({
-      template:'template.ejs',
-      appMountId: 'react-app-root',
-      title: 'react-taproom',
-      filename: resolve(__dirname, "build", "index.html"),
-    }),
+     
+     template:'template.ejs',
+     appMountId: 'react-app-root',
+     title: "Tap Room",
+     filename: resolve(__dirname, "build", "index.html"),
+   }),
   ]
 };
