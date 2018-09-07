@@ -33,6 +33,12 @@ For any questions or support details, please email:
 * Add routing to different pages on site.  
 * Add images and styling for site.
 
+## Workflow Diagram
+![](src/assets/images/kegrouting.png)
+
+## Notes
+* I will be working on button and forms next week
+
 ## MIT License
 
 Copyright (c) 2018 ** Swati Sahay**
