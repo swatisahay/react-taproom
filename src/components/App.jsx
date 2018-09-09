@@ -8,6 +8,7 @@ import Keglist from './Keglist';
 import Header from './Header';
 import NewKegForm from './NewKegForm';
 import Home from './Home';
+import Error404 from './Error404';
 
 
 function App(){
@@ -19,6 +20,7 @@ function App(){
         <Route path='/about' component={About} />
         <Route path='/keg' component={Keglist} />
         <Route path='/beerform' component={NewKegForm} />
+        <Route component={Error404} />
 
 
 
