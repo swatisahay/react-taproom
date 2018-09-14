@@ -21,7 +21,7 @@ function Header(){
       `}</style>
       <h1>Taproom</h1>
 
-      <div className="links"><Link to="/">Home</Link> | <Link to="/keg">Beer Keg List</Link> | <Link to="/about">About Us</Link> | <Link to="/beerform">Add New Beer Keg</Link> </div>
+      <div className="links"><Link to="/">Home</Link> | <Link to="/keg">Beer Keg List</Link> | <Link to="/about">About Us</Link> | <Link to="/newkeg">Add New Beer Keg</Link> </div>
     </div>
 
   );

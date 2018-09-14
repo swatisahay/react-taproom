@@ -1,16 +1,10 @@
 import React from 'react';
 import taproom from '../assets/images/taproom.jpg';
 import { v4 } from 'uuid';
+import PropTypes from 'prop-types';
 
+function NewKegForm(props) {
 
-
-
-
-
-
-
-function NewKegForm() {
-  return (
     let _name = null;
     let _brewer = null;
     let _description = null;
@@ -21,10 +15,10 @@ function NewKegForm() {
 
   function handleNewKegFormSubmit(event) {
     event.preventDefault();
-    props.onNewPostCreation({name: _name.value, brewer: _brewer.value, description: _description.value, abv: _abv.value, price: _price.value, kegremaining: _kegremaining.value id: v4()});
+    props.onNewKegCreation({name: _name.value, brewer: _brewer.value, description: _description.value, abv: _abv.value, price: _price.value, kegremaining: _kegremaining.value, id: v4()});
     _name.value = '';
-    _postTitle.value = '';
-    _post.value = '';
+    _brewer.value = '';
+    _description.value = '';
     _abv.value='';
     _price.value='';
     _kegremaining.value=0;
@@ -91,6 +85,8 @@ function NewKegForm() {
   );
 }
 
+NewKegForm.propTypes = {
+  onNewKegCreation: PropTypes.func
+};
 
-  
 export default NewKegForm;

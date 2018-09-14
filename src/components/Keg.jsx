@@ -52,7 +52,7 @@ Keg.propTypes = {
   brewer: PropTypes.string.isRequired,
   description: PropTypes.string.isRequired,
   abv: PropTypes.string.isRequired,
-  price: PropTypes.number.isRequired,
+  price: PropTypes.string.isRequired,
   kegremaining: PropTypes.number.isRequired
 };
 

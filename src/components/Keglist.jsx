@@ -1,65 +1,16 @@
 import React from 'react';
 import Keg from './Keg';
-
+import PropTypes from 'prop-types';
 import taproom from '../assets/images/taproom.jpg';
-const keglist = [
-    {
-    name: 'Farmstrong cold beer',
-    brewer: 'pilsner',
-    description: 'Sparkling Wine & Grapefruit',
-    abv: '6.8%',
-    price: '8',
-    kegremaining: '20'
-    },
-    {
-    name: 'Tart N Juicy',
-    brewer: 'Epic',
-    description: 'Sour IPA',
-    abv: '4.5%',
-    price: '6',
-    kegremaining: '60'
-    },
-    {
-    name: 'Hamm\'s',
-    brewer: 'Miller/Coors',
-    description: 'American Lager',
-    abv: '4.7%',
-    price: '3',
-    kegremaining: '65'
-    },
-    {
-    name: 'Prismatic',
-    brewer: 'Ninkasi',
-    description: 'Juicy IPA',
-    abv:  '5.9%',
-    price: '6',
-    kegremaining: '75'
-    },
-    {
-    name: 'Juicy Haze',
-    brewer: 'New Belgium',
-    description: 'India Pale Ale',
-    abv:  '7.5%',
-    price: '6',
-    kegremaining: '18'
-    },
-    {
-    name: '8 Hop',
-    brewer: 'New Belgium',
-    description: 'Pale Ale',
-    abv:  '5.5%',
-    price: '6',
-    kegremaining: '58'
-    }
-];
 
-function Keglist(){
+
+function Keglist(props){
   return(
     <div>
       <h2>Keglist</h2>
 
       <hr/>
-      {keglist.map((kegList, index) =>
+      {props.kegList.map((kegList) =>
         <Keg name={kegList.name}
           brewer={kegList.brewer}
           description={kegList.description}
@@ -67,7 +18,7 @@ function Keglist(){
           price={kegList.price}
           kegremaining={kegList.kegremaining}
 
-          key ={index}/>
+          key ={kegList.id}/>
       )}
       <style jsx>{`
         img {
@@ -80,7 +31,7 @@ function Keglist(){
           color: #824c56;
         }
       `}</style>
-    <style global jsx>{`
+      <style global jsx>{`
         body {
           background-image: url(${taproom});
           background-size: cover;
@@ -90,5 +41,7 @@ function Keglist(){
     </div>
   );
 }
-
+Keglist.propTypes = {
+  kegList: PropTypes.array
+};
 export default Keglist;
