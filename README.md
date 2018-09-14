@@ -29,7 +29,8 @@ For any questions or support details, please email:
 
 * Show list of beer kegs, For each keg, the patron see its name, brand, price and alcohol Content and kegs remaining.
 * Employee can add new beer keg.
-* Employee can modify kegs properties.
+* Employee can sell pints of kegs
+* Employee can see the pints remaining after selling
 * Add routing to different pages on site.  
 * Add images and styling for site.
 
