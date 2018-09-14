@@ -2,8 +2,8 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props){
-  function handleClickBuy(){
-    props.onClickBuy(props.id);
+  function handleSellingPint(id){
+    props.onSellingPint(props.id);
  }
   return(
     <div className = "card">
@@ -16,7 +16,7 @@ function Keg(props){
         <p><strong>ABV:</strong> {props.abv}%</p>
         <p><strong>Price:</strong> ${props.price}</p>
         <p><strong>Pints Remaining:</strong> {props.kegremaining}</p>
-        <h3><button onClick={handleClickBuy} className="btn btn-success">Buy</button></h3>
+        <h3><button onClick={handleSellingPint} className="btn btn-success">Buy</button></h3>
       </div>
       <style jsx>
         {`h3 {
@@ -58,7 +58,7 @@ Keg.propTypes = {
   price: PropTypes.string.isRequired,
   kegremaining: PropTypes.number.isRequired,
   id: PropTypes.string.isRequired,
-  onClickBuy: PropTypes.func,
+  onSellingPint: PropTypes.func
 };
 
 export default Keg;
