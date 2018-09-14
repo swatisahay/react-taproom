@@ -21,7 +21,7 @@ function NewKegForm(props) {
     _description.value = '';
     _abv.value='';
     _price.value='';
-    _kegremaining.value=0;
+    _kegremaining.value='';
   }
 
   return (

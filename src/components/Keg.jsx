@@ -2,6 +2,9 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 function Keg(props){
+  function handleClickBuy(){
+    props.onClickBuy(props.id);
+ }
   return(
     <div className = "card">
       <img className="card-img-top" src={props.image}/>
@@ -10,10 +13,10 @@ function Keg(props){
         <p><strong>Brewer:</strong> {props.brewer}</p>
         <p><strong>Description:</strong> {props.description}</p>
 
-        <p><strong>ABV:</strong> {props.abv}</p>
-        <p><strong>Price:</strong> {props.price}</p>
+        <p><strong>ABV:</strong> {props.abv}%</p>
+        <p><strong>Price:</strong> ${props.price}</p>
         <p><strong>Pints Remaining:</strong> {props.kegremaining}</p>
-
+        <h3><button onClick={handleClickBuy} className="btn btn-success">Buy</button></h3>
       </div>
       <style jsx>
         {`h3 {
@@ -53,7 +56,9 @@ Keg.propTypes = {
   description: PropTypes.string.isRequired,
   abv: PropTypes.string.isRequired,
   price: PropTypes.string.isRequired,
-  kegremaining: PropTypes.number.isRequired
+  kegremaining: PropTypes.number.isRequired,
+  id: PropTypes.string.isRequired,
+  onClickBuy: PropTypes.func,
 };
 
 export default Keg;
